@@ -1,0 +1,62 @@
+
+{% extends 'base.html' %}
+{% load thumbnail %}
+{%load crispy_forms_tags %}
+
+
+{% block content %}
+
+    
+<div class="content-section-2">
+
+    <div>
+        <div class="list-view table-responsive" id="list-view">
+            <table class="list-view__table display table" id="example" width="100%" style="background-color:lightgray !important">
+                <thead class="list-view__head">
+                    <tr>
+                        <th>Name</th>
+                        <!--<th>Population</th>-->
+                        <th>Price</th>
+                        <th>Location</th>
+                        <th>Date Sold</th>
+                        
+                    </tr>
+                </thead>
+
+                <tbody class="list-view__body">
+                    {% for item in history %}
+                    {%if item.username_id == request.user.id%}
+                    <tr>
+                        <td>{{item.name}}</td>
+                        <!--<td>{{item.Population}}</td>-->
+                        <td>{{item.price}}</td>
+                        <td>{{item.location}}</td>
+                        <td>{{item.date_sold}}</td>
+                      
+
+                    </tr>
+                    {%else%}
+                                            {%endif%}
+                    {%endfor%}
+
+                </tbody>
+            </table>
+
+
+
+
+        </div>
+    </div>
+    <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.min.js"></script>
+    {% comment %} <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.2/js/jquery.dataTables.js"></script> {% endcomment %}
+    <script>
+        $(document).ready(function () {
+                $('#example').DataTable({
+    
+                });
+            });
+        </script>
+        
+       
+{%endblock%}

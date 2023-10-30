@@ -1,0 +1,483 @@
+
+{% load i18n %}
+
+
+{%load static%}
+{% load crispy_forms_tags%}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<!-- Mirrored from layerdrops.com/agrionhtml/main-html/products.html by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 26 Feb 2023 19:08:28 GMT -->
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Safri </title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/images/resources/logo 3.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/images/resources/logo 3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/resources/logo 3.png" />
+    <link rel="manifest" href="/static/assets/images/favicons/site.webmanifest" />
+   
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/agrion-icons/style.css">
+    <link rel="stylesheet" href="/static/assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/timepicker/timePicker.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/nice-select/nice-select.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="/static/assets/css/agrion.css" />
+    <link rel="stylesheet" href="/static/assets/css/agrion-responsive.css" />
+    <style>
+        alert {
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border: 1px solid transparent;
+            border-radius: 0.25rem;
+        }
+        
+        .alert-success {
+            color: white;
+            background-color: #4CAF50 ;
+            border-color: #c3e6cb;
+        }
+        
+        .alert-info {
+            color: white;
+            background-color: #ff9800;
+            border-color: #bee5eb;
+        }
+        
+        .alert-warning {
+            color: black;
+            background-color: #fff3cd;
+            border-color: #ffeeba;
+        }
+        
+        .alert-danger {
+            color: white;
+            background-color: #f44336;
+            border-color: #f5c6cb;
+        }
+          
+        </style>
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+
+
+
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header">
+            <div class="main-header__wrapper">
+                <div class="main-header__wrapper-inner">
+                    <div class="main-header__logo">
+                        <a href="{% url 'home' %}"><img src="{% static 'assets/images/resources/LOGO 1.png' %}" height ="60px"alt=""></a>
+                    </div>
+                    <div class="main-header__menu-box">
+                        <div class="main-header__menu-box-top">
+                            <ul class="list-unstyled main-header__contact-list">
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-email"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p><a href="mailto:princegeestar@gmail.com">Helpdesk@safri.com</a></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="icon-pin"></i>
+                                    </div>
+                                    <div class="text">
+                                        <p>The Federal Polytechnic Ede, Osun</p>
+                                    </div>
+                                </li>
+                            </ul>
+                           
+                        </div>
+                        <div class="main-header__menu-box-bottom">
+                            <nav class="main-menu">
+                                <div class="main-menu__wrapper">
+                                    <div class="main-menu__wrapper-inner">
+                                        <div class="main-menu__left">
+                                            <div class="main-menu__main-menu-box">
+                                                <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                                <ul class="main-menu__list">
+                                                    <li class="dropdown megamenu">
+                                                        
+                                                    </li>
+                                                    <li>
+                                                        <a href="about.html">About</a>
+                                                    </li>
+                                                    <li class="dropdown">
+                                                        <a href="#">Pages</a>
+                                                        <ul class="shadow-box">
+                                                            {% if request.user.is_authenticated %}
+                                                            <li><a href="/profile/">Profile</a>
+                                                            </li>
+                                                            <li><a href="/logout/">Sign Out</a>
+                                                            </li>
+                                                            {%else%}
+                                                            <li><a href="/register/">Sign Up
+                                                                </a></li>
+                                                            <li><a href="/login/">Sign in</a>
+                                                            </li>
+                                                            {%endif%}
+                                                        </ul>
+                                                    </li>
+                                                    
+                                                    <li class="dropdown">
+                                                        <a href="#">Shop</a>
+                                                        <ul class="shadow-box">
+                                                            <li><a href="/products/">Products</a></li>
+                                                            {% if request.user.is_active and request.user.is_authenticated%}
+                                                            <li><a href="/create/">Create Ads</a></li>
+                                                            {%endif%}
+                                                        </ul>
+                                                    </li>
+                                                    
+                                                    
+                                                    <li>
+                                                        <a href="/contact/">Contact</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="main-menu__right">
+                                            <div class="main-menu__search-cart-btn-box">
+                                                <div class="main-menu__search-box">
+                                                    <a href="#"
+                                                        class="main-menu__search search-toggler icon-magnifying-glass"></a>
+                                                </div>
+                                              
+                                                <div class="main-menu__btn-box">
+                                                    <a href="/profile/" class="thm-btn main-menu__btn">{{user.username}}
+                                                        <i class="icon-right-arrow"></i> </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="main-header__phone-contact-box">
+                        <div class="main-header__phone-number">
+                            <a href="tel:9200886823">+234 (7067) 2089 17</a>
+                        </div>
+                        <div class="main-header__call-box">
+                            <div class="main-header__call-inner">
+                                <div class="main-header__call-icon">
+                                    <span class="fas fa-phone"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Page Header Start-->
+        <section class="page-header">
+            <div class="page-header-bg" style="background-image: url(/static/assets/images/backgrounds/page-header-bg.jpg)">
+            </div>
+            <div class="container">
+                <div class="page-header__inner">
+                    <ul class="thm-breadcrumb list-unstyled">
+                        <li><a href="{% url 'home' %}.html">Home</a></li>
+                        <li><span>/</span></li>
+                        <li>Login</li>
+                    </ul>
+                    <h2>Account Login</h2>
+                </div>
+            </div>
+        </section>
+        <!--Page Header End-->
+
+        <!--Product Start-->
+        <section class="product">
+            <div class="container">
+               
+                
+             
+                <form class="form_group"  method="post" enctype="multipart/form-data">
+                <div class="messager">
+                    {% for message in messages%}
+
+                <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert" style="width:auto">
+                    <strong> {{message}}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {%endfor%}
+            </div>
+                    {% csrf_token %}
+                    {{form|crispy}}
+                    <div>
+                    <button class="btn btn-success" type="submit">Login</button>
+                    </div>
+                </form>
+                
+            </div>
+            <br>
+            
+        </section>
+        <!--Product End-->
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="site-footer-shape-1 float-bob-x"
+                            style="background-image: url(/static/assets/images/resource/logoo.png);"></div>
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__column footer-widget__about">
+                                    <div class="footer-widget__logo">
+                                        <a href="{% url 'home' %}"><img src="{% static 'assets/images/resources/logoo.png' %}"
+                                            height="80px"        alt=""></a>
+                                    </div>
+                                    <div class="footer-widget__about-text-box">
+                                        <p class="footer-widget__about-text">Welcome to our safric. you can by and sell 
+                                            Agricultural products Here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="footer-widget__column footer-widget__Explore">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Explore</h3>
+                                    </div>
+                                    <ul class="footer-widget__Explore-list list-unstyled">
+                                        {% comment %} <li><a href="about.html">About</a></li>
+                                        <li><a href="farmers.html">Our Farmers</a></li> {% endcomment %}
+                                        <li><a href="/products/">New Products</a></li>
+                                        
+                                        <li><a href="/contact/">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                                <div class="footer-widget__column footer-widget__news">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Categories</h3>
+                                    </div>
+                                    <ul class="footer-widget__Explore-list list-unstyled">
+                                        {% comment %} <li><a href="about.html">About</a></li>
+                                        <li><a href="farmers.html">Our Farmers</a></li> {% endcomment %}
+                                        <li><a href="/livestock/">Livestock</a></li>
+                                        
+                                        <li><a href="/crop/">Food Crops</a></li>
+                                        <li><a href="/machinery/">Farm Machineries</a></li
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="footer-widget__column footer-widget__Contact">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Contact</h3>
+                                    </div>
+                                    <ul class="footer-widget__Contact-list list-unstyled">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-phone-square-alt"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="tel:07067208917">+234 (7067) 2089 17</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-envelope"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="mailto:princegeestar@gmail.com">Helpdesk@safri.com</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>The Federal Polytechnic Ede. Osun</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="footer-widget__Contact-form" action=/contact/>
+                                        <div class="footer-widget__Contact-input-box">
+                                            <input type="email" placeholder="Email Address" name="email">
+                                            <button  class="footer-widget__Contact-btn"><a href='/contact/'><i
+                                                    class="icon-right-arrow"></i></a></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <p class="site-footer__bottom-text">© Copyright <script>document.write(/\d{4}/.exec(Date())[0])</script> by <a href="#">Safri.com</a></p>
+                                <div class="site-footer__social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="site-footer__bottom-scroll">
+                                    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i
+                                            class="icon-up-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+        <script>
+            $(document).ready(function() {
+                // messages timeout for 10 sec 
+                setTimeout(function() {
+                    $('.alert').fadeOut('slow');
+                }, 5000); // <-- time in milliseconds, 1000 =  1 sec
+         
+                // delete message
+                $('.del-msg').live('click',function(){
+                    $('.del-msg').parent().attr('style', 'display:none;');
+                })
+            });
+         </script>
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="{% url 'home' %}" aria-label="logo image"><img src="{% static 'assets/images/resources/logo 3.png' %}" width="122"
+                        alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:princegeestar@gmail.com">needhelp@agrion.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:070-672-08917">070 672 08917</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+    
+
+
+
+    {% comment %} <script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}"></script> {% endcomment %}
+    <script  src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/odometer/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bxslider/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/vegas/vegas.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'assets/vendors/timepicker/timePicker.js' %}"></script>
+    <script src="{% static 'assets/vendors/circleType/jquery.circleType.js' %}"></script>
+    <script src="{% static 'assets/vendors/circleType/jquery.lettering.min.js' %}"></script>
+
+
+
+
+    <!-- template js -->
+    <script src="{% static 'assets/js/agrion.js' %}"></script>
+</body>

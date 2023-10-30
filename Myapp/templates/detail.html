@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+
+
+{% block content %}
+<div class="container">
+    <h3>{{ product.name }}</h3>
+    <small>{{ product.created }}</small>
+    <p>{{ product.price }} <span>&#8358;</span></p>
+    <img src="{{ product.image.url }}" width="400px" height="400px" alt="{{ product.name }}">
+    <hr/>
+    <p>{{ product.description }}</p>
+   {% if product.status == 'SoldOut' %}
+   <h2> this product has been <h1>sold out </h1><h2>
+    {% comment %} {%elif product.username_id == request.user.id%} {% endcomment %}
+    {%else%}
+    {%load crispy_forms_tags%}
+   
+    <form method="post">
+    
+        {% csrf_token %}
+        {{form|crispy}}
+        {% comment %} <input type = "text" name="user" value ={{request.user.id}} hidden>
+        <input type = "text" name="blog" value ={{product.id}} hidden>
+    
+        <p><label for="w3review">Chat with Buyer :</label></p>
+        <textarea id="w3review" name="comment" rows="4" cols="50"></textarea>
+        <br> {% endcomment %}
+        <input type="submit" value="Submit">
+      </form>
+      
+      {%endif%}
+    
+
+      <section class="sec-block">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="feedback-section">
+                        <h2>Feedbacks ({{count}})</h2>
+                        <div class="testimonials-list">
+                            {% for feed in feedback %}
+                            <div class="test-monial">
+                                <div class="testi_head">
+                                    <ul>
+                                        <li>
+                                            <img src="assets/images/resources/auth1.jpg" alt="">
+                                            <span>{{feed.username}}</span>
+                                                    
+                                        </li>
+                                        <li>
+                                            {{feed.date}}
+                                        </li>
+                                        <li>
+                                            {{feed.chat_with_seller}}
+                                        </li>
+                                    </ul>
+                                </div>
+                                {%if feed.username_id == request.user.id%}
+                                <a href="/reply/{{feed.id}}" class="btn btn-primary">view reply</a>
+                                {%elif product.username_id == request.user.id%}
+                                <a href="/reply/{{feed.id}}" class="btn btn-primary">reply</a>
+                                {%else%}
+                                {%endif%}
+                            </div><!--test-monial end-->{%endfor%}
+                            
+                        </div>
+                    </div><!--feedback section end-->
+    </div>
+    
+{% endblock %}

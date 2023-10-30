@@ -1,0 +1,993 @@
+{%load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Safri </title>
+    <!-- favicons Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/static/assets/images/resources/logo 3.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/static/assets/images/resources/logo 3.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/static/assets/images/resources/logo 3.png" />
+    <link rel="manifest" href="/static/assets/images/favicons/site.webmanifest" />
+   
+
+
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&amp;display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/static/assets/vendors/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/animate/animate.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/animate/custom-animate.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/fontawesome/css/all.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/jarallax/jarallax.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/jquery-magnific-popup/jquery.magnific-popup.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/nouislider/nouislider.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/nouislider/nouislider.pips.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/odometer/odometer.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/swiper/swiper.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/agrion-icons/style.css">
+    <link rel="stylesheet" href="/static/assets/vendors/tiny-slider/tiny-slider.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/reey-font/stylesheet.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/owl-carousel/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/owl-carousel/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/bxslider/jquery.bxslider.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/bootstrap-select/css/bootstrap-select.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/vegas/vegas.min.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/jquery-ui/jquery-ui.css" />
+    <link rel="stylesheet" href="/static/assets/vendors/timepicker/timePicker.css" />
+
+    <!-- template styles -->
+    <link rel="stylesheet" href="/static/assets/css/agrion.css" />
+    <link rel="stylesheet" href="/static/assets/css/agrion-responsive.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons" media="all">
+    <style>
+        .wrapper {
+            position:relative;
+            display: flex;
+            
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            margin: 0;
+            padding: 0;
+          }
+          
+          .bell .material-icons { 
+            /* font-size:12rem !important; */
+            /* font-size:36px !important; */
+            font-size:3rem !important;
+          }
+          
+          .bell {
+            position:relative;
+            display:inline-block;  
+            /* border:dashed 1px rgba(0,0,0,.25); */
+            margin:0;
+            padding:0;  
+          }
+          
+          .bell .anchor {
+            transform-origin:center top;
+            display:inline-block;
+            margin:0;
+            padding:0;       
+          }
+          
+          .bell .layer-1 {
+            color:green;
+            z-index:9;
+            animation: animation-layer-1 5000ms infinite;      
+            opacity:0;  
+          }
+          
+          .bell .layer-2 {
+            color:green;
+            z-index:8;
+            position:absolute;top:0;left:0;   
+            animation: animation-layer-2 5000ms infinite;    
+          }
+          
+          .bell .layer-3 {
+            color:#333642;
+            z-index:7;
+            position:absolute;top:0;left:0; 
+            animation: animation-layer-3 5000ms infinite;    
+          }
+          
+          @keyframes animation-layer-1 {
+            0% { transform: rotate(0deg);opacity:0; }
+            8.0% { transform: rotate(0deg);opacity:0; }
+            12.0% { transform: rotate(42deg);opacity:.5; }
+            16.0% { transform: rotate(-35deg);opacity:.4; }
+            20.0% { transform: rotate(0deg);opacity:.1; }
+            23.0% { transform: rotate(28deg);opacity:.3; }
+            26.0% { transform: rotate(-20deg);opacity:.2; }
+            29.0% { transform: rotate(0deg);opacity:.1; }
+            31.0% { transform: rotate(16deg);opacity:0; }
+            33.0% { transform: rotate(-12deg);opacity:0; }
+            35.0% { transform: rotate(0deg);opacity:0; }	
+            37.0% { transform: rotate(-6deg);opacity:0; }
+            39.0% { transform: rotate(0deg);opacity:0; }
+          }
+          
+          @keyframes animation-layer-2 {
+            0% { transform: rotate(0deg); }
+            8.0% { transform: rotate(0deg); }
+            12.0% { transform: rotate(42deg); }
+            16.0% { transform: rotate(-35deg); }
+            20.0% { transform: rotate(0deg); }
+            23.0% { transform: rotate(28deg); }
+            26.0% { transform: rotate(-20deg); }
+            29.0% { transform: rotate(0deg); }
+            31.0% { transform: rotate(16deg); }
+            33.0% { transform: rotate(-12deg); }
+            35.0% { transform: rotate(0deg); }	
+            37.0% { transform: rotate(-6deg); }
+            39.0% { transform: rotate(0deg); }
+            40.0% { transform: rotate(6deg); }
+            44.0% { transform: rotate(-3deg); }
+            49.0% { transform: rotate(2deg);}
+            55.0% { transform: rotate(0deg); }
+            62.0% { transform: rotate(1deg); }
+            70.0% { transform: rotate(0deg); }  
+          }
+          
+          @keyframes animation-layer-3 {
+            0% { transform: rotate(0deg);opacity:1; }
+            8.0% { transform: rotate(0deg);opacity:1; }
+            12.0% { transform: rotate(52deg);opacity:.5; }
+            16.0% { transform: rotate(-48deg);opacity:.4; }
+            20.0% { transform: rotate(0deg);opacity:1; }
+            23.0% { transform: rotate(42deg);opacity:.3; }
+            26.0% { transform: rotate(-30deg);opacity:.2; }
+            29.0% { transform: rotate(0deg);opacity:1; }
+            31.0% { transform: rotate(26deg);opacity:.15; }
+            33.0% { transform: rotate(-18deg);opacity:.1; }
+            35.0% { transform: rotate(0deg);opacity:1; }	
+            37.0% { transform: rotate(-12deg);opacity:.8; }
+            40.0% { transform: rotate(6deg);opacity:1; }
+            44.0% { transform: rotate(-3deg);opacity:.8; }
+            49.0% { transform: rotate(2deg);opacity:1; }
+            55.0% { transform: rotate(0deg);opacity:1; }
+            62.0% { transform: rotate(1deg);opacity:1; }
+            70.0% { transform: rotate(0deg);opacity:1; }
+          }
+        </style>
+</head>
+
+<body class="custom-cursor">
+
+    <div class="custom-cursor__cursor"></div>
+    <div class="custom-cursor__cursor-two"></div>
+
+
+
+
+
+    <div class="preloader">
+        <div class="preloader__image"></div>
+    </div>
+    <!-- /.preloader -->
+
+
+    <div class="page-wrapper">
+        <header class="main-header-two">
+            <div class="main-header-two__inner">
+                <div class="main-header-two__top">
+                    <div class="container">
+                        <div class="main-header-two__top-inner">
+                            <div class="main-header-two__logo">
+                                <a href="{% url 'home' %}"><img src="{% static 'assets/images/resources/logo 3.png' %}" height="122px" alt=""></a>
+                            </div>
+                            <div class="main-header-two__top-left">
+                                <ul class="list-unstyled main-header-two__contact-list">
+                                    <li>
+                                        <div class="icon">
+                                            <i class="icon-email"></i>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="princegeestar@gmail.com">Helpdesk@safri.com</a></p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="icon-pin"></i>
+                                        </div>
+                                        <div class="text">
+                                            <p>Ede, Osun State</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="icon">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div class="text">
+                                            <p><a href="">+23467208917</a></p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="main-header-two__top-right">
+                                {% comment %} <div class="main-header-two__social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="main-header-two__bottom">
+                    <nav class="main-menu main-menu-two">
+                        <div class="main-menu-two__wrapper">
+                            <div class="container">
+                                <div class="main-menu-two__wrapper-inner">
+                                    <div class="main-menu-two__left">
+                                        <div class="main-menu-two__main-menu-box">
+                                            <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>
+                                            <ul class="main-menu__list">
+                                                <li class="dropdown current megamenu">
+                                                    <a href="{% url 'home' %}">Home </a>
+                                                    <ul>
+                                                        
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li class="dropdown">
+                                                    <a href="#">Pages</a>
+                                                    <ul class="shadow-box">
+                                                        {% if request.user.is_authenticated %}
+                                                        <li><a href="/profile/{{user.username}}">Profile</a>
+                                                        </li>
+                                                        <li><a href="/logout/">Sign Out</a>
+                                                        </li>
+                                                        {%else%}
+                                                        <li><a href="/register/">Sign Up
+                                                            </a></li>
+                                                        <li><a href="/login/">Sign in</a>
+                                                        </li>
+                                                        {%endif%}
+                                                    </ul>
+                                                </li>
+                                                
+                                                
+                                               
+                                                
+                                                <li class="dropdown">
+                                                    <a href="#">Shop</a>
+                                                    <ul class="shadow-box">
+                                                        <li><a href="/products/">Products</a></li>
+                                                        {% if request.user.is_active and request.user.is_authenticated%}
+                                                        <li><a href="/create/">Create Ads</a></li>
+                                                        {%endif%}
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="/contact/">Contact</a>
+                                                </li>
+                                                <li class="dropdown">
+                                                    {{notify.username}}
+                                                    {%if notify|length != 0%}
+                                                    <a href="#">
+                                                        
+                                                        <div class="wrapper">
+    
+                                                            <div class="bell" id="bell-1">
+                                                              <div class="anchor material-icons layer-1">notifications_active</div>
+                                                              <div class="anchor material-icons layer-2">notifications</div>
+                                                              <div class="anchor material-icons layer-3">notifications</div>
+                                                            </div>
+                                                          
+                                                          </div>
+                                                         
+                                                          
+                                                          {{notify|length}}
+                                                          
+                                                    </a>
+                                                    {%endif%}
+                                                    <ul class="shadow-box">
+                                                        {%for note in notify reversed%}
+                                                        {%if note.isread == "Unread" %}
+                                                        <li style="display:inline"><b><a href="/reply/{{note.ids}}">you have a notification on {{note.topic}}</a></b>
+                                                            <form action="/read/" method="post" >
+                                                                {% csrf_token %}
+                                                        <input type = "text" value = "{{note.id}}" name="like" hidden >
+                                                        <button type="submit" style="border:none;background:inherit"><img src="{% static 'assets/images/icon/checkmark.png' %}" style="height:45px !important" alt=""
+                                                            class="float-bob-y"></button>
+                                                            </form>
+                                                        </li>
+                                                        {%endif%}
+                                                        {%endfor%}
+                                                    </ul>
+                                                    
+                                                    {% comment %} {%endif%} {% endcomment %}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="main-menu-two__right">
+                                        
+                                        <div class="main-menu-two__search-cart-btn-box">
+                                            
+                                            <div class="main-menu-two__btn-box">
+                                                {% if request.user.is_active and request.user.is_authenticated%}
+                                                <a href="/profile/{{user.username}}" class="thm-btn main-menu-two__btn">{{request.user.username}}
+                                                    <i class="icon-right-arrow"></i> </a>
+                                                {%else%}
+                                                <a href="/register/" class="thm-btn main-menu-two__btn">Get Free Account
+                                                    <i class="icon-right-arrow"></i> </a>
+                                                {%endif%}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div class="stricky-header stricked-menu main-menu main-menu-two">
+            <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
+        </div><!-- /.stricky-header -->
+
+        <!--Main Slider Two Start-->
+        <section class="main-slider-two clearfix">
+            <div class="swiper-container thm-swiper__slider" data-swiper-options='{"slidesPerView": 1, "loop": true,
+                "effect": "fade",
+                "pagination": {
+                "el": "#main-slider-pagination",
+                "type": "bullets",
+                "clickable": true
+                },
+                "navigation": {
+                "nextEl": "#main-slider__swiper-button-next",
+                "prevEl": "#main-slider__swiper-button-prev"
+                },
+                "autoplay": {
+                "delay": 5000
+                }}'>
+                <div class="swiper-wrapper">
+
+                    <div class="swiper-slide">
+                        <div class="image-layer-two"
+                            style="background-image: url(/static/assets/images/backgrounds/main-slider-2-1.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-two__content">
+                                        <p class="main-slider-two__sub-title">Welcome to Agriculture Farm</p>
+                                        <h2 class="main-slider-two__title">Agriculture <span>&</span><br>
+                                            Pure Eco Farming</h2>
+                                        <div class="main-slider-two__btn-box">
+                                            <a href="/login/" class="thm-btn main-slider-two__btn">Discover More <i
+                                                    class="icon-right-arrow"></i> </a>
+                                        </div>
+                                        <div class="main-slider-two__shape-1">
+                                            <img src="{% static 'assets/images/shapes/main-slider-two-shape-1.png' %}" alt=""
+                                                class="float-bob-y">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="image-layer-two"
+                            style="background-image: url(/static/assets/images/backgrounds/main-slider-2-2.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-two__content">
+                                        <p class="main-slider-two__sub-title">Welcome to Agriculture Farm</p>
+                                        <h2 class="main-slider-two__title">Agriculture <span>&</span><br>
+                                            Pure Eco Farming</h2>
+                                        <div class="main-slider-two__btn-box">
+                                            <a href="/login/" class="thm-btn main-slider-two__btn">Discover More <i
+                                                    class="icon-right-arrow"></i> </a>
+                                        </div>
+                                        <div class="main-slider-two__shape-1">
+                                            <img src="{% static 'assets/images/shapes/main-slider-two-shape-1.png' %}" alt=""
+                                                class="float-bob-y">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide">
+                        <div class="image-layer-two"
+                            style="background-image: url(/static/assets/images/backgrounds/main-slider-2-3.jpg);"></div>
+                        <!-- /.image-layer -->
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-xl-12">
+                                    <div class="main-slider-two__content">
+                                        <p class="main-slider-two__sub-title">Welcome to Agriculture Farm</p>
+                                        <h2 class="main-slider-two__title">Agriculture <span>&</span><br>
+                                            Pure Eco Farming</h2>
+                                        <div class="main-slider-two__btn-box">
+                                            <a href="/login/" class="thm-btn main-slider-two__btn">Discover More <i
+                                                    class="icon-right-arrow"></i> </a>
+                                        </div>
+                                        <div class="main-slider-two__shape-1">
+                                            <img src="{% static 'assets/images/shapes/main-slider-two-shape-1.png' %}" alt=""
+                                                class="float-bob-y">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <div class="swiper-pagination" id="main-slider-pagination"></div>
+
+                <!-- If we need navigation buttons -->
+                <div class="main-slider__nav">
+                    <div class="swiper-button-prev" id="main-slider__swiper-button-next">
+                        <i class="icon-right-arrow"></i>
+                    </div>
+                    <div class="swiper-button-next" id="main-slider__swiper-button-prev">
+                        <i class="icon-right-arrow"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <!--Main Slider Two End-->
+
+        <!--Feature Two Start-->
+        <section class="feature-two">
+            <div class="feature-two__bg" style="background-image: url(/static/assets/images/backgrounds/feature-two-bg.jpg);">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__inner">
+                                <div class="feature-two__icon">
+                                    <span class="icon-agriculture"></span>
+                                </div>
+                                <div class="feature-two__content">
+                                    <h3 class="feature-two__title"><a href="about.html">Technology</a></h3>
+                                    <p class="feature-two__subtitle">We’ve been using tech</p>
+                                </div>
+                            </div>
+                            <div class="feature-two__count"></div>
+                        </div>
+                    </div>
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__inner">
+                                <div class="feature-two__icon">
+                                    <span class="icon-farmer-1"></span>
+                                </div>
+                                <div class="feature-two__content">
+                                    <h3 class="feature-two__title"><a href="farmers.html">Best Farmers</a></h3>
+                                    <p class="feature-two__subtitle">Skilled team of farmers</p>
+                                </div>
+                            </div>
+                            <div class="feature-two__count"></div>
+                        </div>
+                    </div>
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__inner">
+                                <div class="feature-two__icon">
+                                    <span class="icon-certified"></span>
+                                </div>
+                                <div class="feature-two__content">
+                                    <h3 class="feature-two__title"><a href="about.html">We’re Certified</a></h3>
+                                    <p class="feature-two__subtitle">Safri is certified market</p>
+                                </div>
+                            </div>
+                            <div class="feature-two__count"></div>
+                        </div>
+                    </div>
+                    <!--Feature Two Single End-->
+                    <!--Feature Two Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="feature-two__single">
+                            <div class="feature-two__inner">
+                                <div class="feature-two__icon">
+                                    <span class="icon-cargo"></span>
+                                </div>
+                                <div class="feature-two__content">
+                                    <h3 class="feature-two__title"><a href="about.html">We Deliver</a></h3>
+                                    <p class="feature-two__subtitle">We deliver everywhere</p>
+                                </div>
+                            </div>
+                            <div class="feature-two__count"></div>
+                        </div>
+                    </div>
+                    <!--Feature Two Single End-->
+                </div>
+            </div>
+        </section>
+        <!--Feature Two End-->
+
+        <!--About Two Start-->
+        <section class="about-two">
+            <div class="about-two__bg float-bob-x">
+                <img src="{% static 'assets/images/backgrounds/about-two-bg-1.png' %}" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-5">
+                        <div class="about-two__left">
+                            <div class="about-two__img wow slideInLeft" data-wow-delay="100ms"
+                                data-wow-duration="2500ms">
+                                <img src="{% static 'assets/images/resources/about-one-1.jpg' %}" alt="">
+                                <div class="about-two__experience">
+                                    <div class="about-two__experience-count-box">
+                                        <h3 class="odometer" data-count="18">00</h3>
+                                        <span class="about-two__experience-plus">+</span>
+                                    </div>
+                                    <p class="about-two__experience-text">Years of
+                                        <br> Experience</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-7">
+                        <div class="about-Two__right">
+                            <div class="section-title text-left">
+                                <span class="section-title__tagline">Welcome to Safri Farm</span>
+                                <h2 class="section-title__title">We’re Leading organic and
+                                    agriculture market</h2>
+                                <div class="section-title__icon">
+                                    <img src="{% static 'assets/images/icon/section-title-icon-1.png' %}" alt="">
+                                </div>
+                            </div>
+                            <p class="about-two__text">Safri Agric platform offers easy-to-use interface for both farmer and buyers, 
+                                allowing farmer to list their products and Buyers to browse available products and make purchases.</p>
+                            <ul class="about-two__points list-unstyled">
+                                <li>
+                                    <div class="about-two__icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="about-two__title">
+                                        <h3>Best Quality
+                                            <br> Standards</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="about-two__icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="about-two__title">
+                                        <h3>Natural Healthy
+                                            <br>Products</h3>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="about-two__icon">
+                                        <span class="fa fa-check"></span>
+                                    </div>
+                                    <div class="about-two__title">
+                                        <h3>Smart Oragnic
+                                            <br> Services</h3>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="about-two__btn-box">
+                                <a href="about.html" class="thm-btn">Discover More <i class="icon-right-arrow"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--About Two End-->
+
+        <!--Services Two Start-->
+        <section class="services-two">
+            <div class="services-two__bg" style="background-image: url(/static/assets/images/shapes/services-two-shape-1.png);">
+            </div>
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">What We’re Doing</span>
+                    <h2 class="section-title__title">Services We’re offering</h2>
+                    <div class="section-title__icon">
+                        <img src="{% static 'assets/images/icon/section-title-icon-1.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Services Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="services-two__single">
+                            <div class="services-two__img">
+                                <img src="{% static 'assets/images/services/services-two-1.jpg' %}" alt="">
+                            </div>
+                            <div class="services-two__content">
+                                <div class="services-two__icon">
+                                    <span class="icon-dairy-products"></span>
+                                </div>
+                                <div class="services-two__more-details">
+                                    <a href="/category/{{livestock.slug}}"><i class="icon-right-arrow"></i>More Detail</a>
+                                </div>
+                            </div>
+                            <div class="services-two__title-box">
+                                <p class="services-two__subtitle">01 Services</p>
+                                <h3 class="services-two__title"><a href="/category/{{livestock.slug}}">Livestock Products</a></h3>
+                            </div>
+                            <div class="services-two__hover-content">
+                                <p class="services-two__hover-sub-title">01 Services</p>
+                                <h3 class="services-two__hover-title"><a href="/category/{{livestock.slug}}">Livestock Products</a>
+                                </h3>
+                                <p class="services-two__hover-text">Get Healthy LIvestock of Your Choice.</p>
+                                <div class="services-two__hover-more-details">
+                                    <a href="/category/{{livestock.slug}}"><i class="icon-right-arrow"></i>More Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Services Two Single End-->
+                    <!--Services Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="services-two__single">
+                            <div class="services-two__img">
+                                <img src="{% static 'assets/images/services/services-two-2.jpg' %}" alt="">
+                            </div>
+                            <div class="services-two__content">
+                                <div class="services-two__icon">
+                                    <span class="icon-dairy-products"></span>
+                                </div>
+                                <div class="services-two__more-details">
+                                    <a href="/category/{{food.slug}}"><i class="icon-right-arrow"></i>More Detail</a>
+                                </div>
+                            </div>
+                            <div class="services-two__title-box">
+                                <p class="services-two__subtitle">02 Services</p>
+                                <h3 class="services-two__title"><a href="/category/{{food.slug}}">Fresh vegetables and Food crops</a>
+                                </h3>
+                            </div>
+                            <div class="services-two__hover-content">
+                                <p class="services-two__hover-sub-title">02 Services</p>
+                                <h3 class="services-two__hover-title"><a href="/category/{{food.slug}}">Fresh and Food crops
+                                        vegetables</a></h3>
+                                <p class="services-two__hover-text">Get any Food Crops of your desire.</p>
+                                <div class="services-two__hover-more-details">
+                                    <a href="/category/{{food.slug}}"><i class="icon-right-arrow"></i>More Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Services Two Single End-->
+                    <!--Services Two Single Start-->
+                    <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="services-two__single">
+                            <div class="services-two__img">
+                                <img src="{% static 'assets/images/project/project-two-3.jpg' %}" height="367px" alt="">
+                            </div>
+                            <div class="services-two__content">
+                                <div class="services-two__icon">
+                                    <span class="icon-dairy-products"></span>
+                                </div>
+                                <div class="services-two__more-details">
+                                    <a href="/category/{{machinery.slug}}"><i class="icon-right-arrow"></i>More Detail</a>
+                                </div>
+                            </div>
+                            <div class="services-two__title-box">
+                                <p class="services-two__subtitle">03 Services</p>
+                                <h3 class="services-two__title"><a href="/category/{{machinery.slug}}">Farm Machineries</a></h3>
+                            </div>
+                            <div class="services-two__hover-content">
+                                <p class="services-two__hover-sub-title">03 Services</p>
+                                <h3 class="services-two__hover-title"><a href="/category/{{machinery.slug}}">Farm Machineries</a>
+                                </h3>
+                                <p class="services-two__hover-text">Get Quality Machineries at Affordable Price.</p>
+                                <div class="services-two__hover-more-details">
+                                    <a href="/category/{{machinery.slug}}"><i class="icon-right-arrow"></i>More Detail</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Services Two Single End-->
+                </div>
+            </div>
+        </section>
+        <!--Services Two End-->
+
+        <!--Provide One Start-->
+        
+        <!--Provide One End-->
+
+        <!--Video One Start-->
+        nh 
+        <!--Video One End-->
+
+        <!--Faq One Start-->
+        
+
+        <!--Project Two Start-->
+        <section class="project-two">
+            <div class="container">
+                <div class="section-title text-center">
+                    <span class="section-title__tagline">Latest Products</span>
+                    <h2 class="section-title__title">Recent Products for sale</h2>
+                    <div class="section-title__icon">
+                        <img src="{% static 'assets/images/icon/section-title-icon-1.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="project-two__carousel thm-owl__carousel owl-theme owl-carousel" data-owl-options='{
+                    "items": 3,
+                    "margin": 30,
+                    "smartSpeed": 700,
+                    "loop":true,
+                    "autoplay": 6000,
+                    "nav":false,
+                    "dots":false,
+                    "navText": ["<span class=\"fa fa-angle-left\"></span>","<span class=\"fa fa-angle-right\"></span>"],
+                    "responsive":{
+                        "0":{
+                            "items":1
+                        },
+                        "768":{
+                            "items":2
+                        },
+                        "992":{
+                            "items": 2
+                        }
+                    }
+                }'>
+                {%for product in product reversed %}
+                    <!--Project Two Single Start-->
+                    <div class="item">
+                        <div class="project-two__single">
+                            <div class="project-two__img">
+                                <img src="{{product.image.url}}" height="480px" alt="">
+                                <div class="project-two__content">
+                                    <h3 class="project-two__title"><a href="/details/{{product.slug}}">{{product.choice}} <br>
+                                            </a></h3>
+                                    <div class="project-two__arrow">
+                                        <a href="/details/{{product.slug}}"><span class="icon-right-arrow"></span></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {%endfor%}
+                    
+                </div>
+            </div>
+        </section>
+        <!--Project Two End-->
+
+        <!--Team One Start-->
+        
+
+        <!--Testimonial Two Start-->
+        <
+        <!--Brand One End-->
+
+        <!--Site Footer Start-->
+        <footer class="site-footer">
+            <div class="site-footer__top">
+                <div class="container">
+                    <div class="site-footer__top-inner">
+                        <div class="site-footer-shape-1 float-bob-x"
+                            style="background-image: url(/static/assets/images/resource/logoo.png);"></div>
+                        <div class="row">
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                                <div class="footer-widget__column footer-widget__about">
+                                    <div class="footer-widget__logo">
+                                        <a href="{% url 'home' %}"><img src="{% static 'assets/images/resources/logoo.png' %}"
+                                            height="80px"        alt=""></a>
+                                    </div>
+                                    <div class="footer-widget__about-text-box">
+                                        <p class="footer-widget__about-text">Welcome to our safric. you can by and sell 
+                                            Agricultural products Here.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
+                                <div class="footer-widget__column footer-widget__Explore">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Explore</h3>
+                                    </div>
+                                    <ul class="footer-widget__Explore-list list-unstyled">
+                                        {% comment %} <li><a href="about.html">About</a></li>
+                                        <li><a href="farmers.html">Our Farmers</a></li> {% endcomment %}
+                                        <li><a href="/products/">New Products</a></li>
+                                        
+                                        <li><a href="/contact/">Contact</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
+                                <div class="footer-widget__column footer-widget__news">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Categories</h3>
+                                    </div>
+                                    <ul class="footer-widget__Explore-list list-unstyled">
+                                        {% comment %} <li><a href="about.html">About</a></li>
+                                        <li><a href="farmers.html">Our Farmers</a></li> {% endcomment %}
+                                        <li><a href="/livestock/">Livestock</a></li>
+                                        
+                                        <li><a href="/crop/">Food Crops</a></li>
+                                        <li><a href="/machinery/">Farm Machineries</a></li
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
+                                <div class="footer-widget__column footer-widget__Contact">
+                                    <div class="footer-widget__title-box">
+                                        <h3 class="footer-widget__title">Contact</h3>
+                                    </div>
+                                    <ul class="footer-widget__Contact-list list-unstyled">
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-phone-square-alt"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="tel:07067208917">+234 (7067) 2089 17</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="fas fa-envelope"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p><a href="mailto:princegeestar@gmail.com">Helpdesk@safri.com</a></p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="icon">
+                                                <span class="icon-pin"></span>
+                                            </div>
+                                            <div class="text">
+                                                <p>The Federal Polytechnic Ede. Osun</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <form class="footer-widget__Contact-form" action=/contact/>
+                                        <div class="footer-widget__Contact-input-box">
+                                            <input type="email" placeholder="Email Address" name="email">
+                                            <button  class="footer-widget__Contact-btn"><a href='/contact/'><i
+                                                    class="icon-right-arrow"></i></a></button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="site-footer__bottom">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-12">
+                            <div class="site-footer__bottom-inner">
+                                <p class="site-footer__bottom-text">© Copyright <script>document.write(/\d{4}/.exec(Date())[0])</script> by <a href="#">Safri.com</a></p>
+                                <div class="site-footer__social">
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-pinterest-p"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="site-footer__bottom-scroll">
+                                    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i
+                                            class="icon-up-arrow"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!--Site Footer End-->
+
+
+    </div><!-- /.page-wrapper -->
+
+
+    <div class="mobile-nav__wrapper">
+        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+        <!-- /.mobile-nav__overlay -->
+        <div class="mobile-nav__content">
+            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+            <div class="logo-box">
+                <a href="{% url 'home' %}" aria-label="logo image"><img src="{% static 'assets/images/resources/logo 3.png' %}" width="122"
+                        alt="" /></a>
+            </div>
+            <!-- /.logo-box -->
+            <div class="mobile-nav__container"></div>
+            <!-- /.mobile-nav__container -->
+
+            <ul class="mobile-nav__contact list-unstyled">
+                <li>
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:princegeestar@gmail.com">needhelp@agrion.com</a>
+                </li>
+                <li>
+                    <i class="fa fa-phone-alt"></i>
+                    <a href="tel:070-672-08917">070 672 08917</a>
+                </li>
+            </ul><!-- /.mobile-nav__contact -->
+            
+
+
+
+        </div>
+        <!-- /.mobile-nav__content -->
+    </div>
+    <!-- /.mobile-nav__wrapper -->
+
+    <div class="search-popup">
+        <div class="search-popup__overlay search-toggler"></div>
+        <!-- /.search-popup__overlay -->
+        <div class="search-popup__content">
+            <form action="#">
+                <label for="search" class="sr-only">search here</label><!-- /.sr-only -->
+                <input type="text" id="search" placeholder="Search Here..." />
+                <button type="submit" aria-label="search submit" class="thm-btn">
+                    <i class="icon-magnifying-glass"></i>
+                </button>
+            </form>
+        </div>
+        <!-- /.search-popup__content -->
+    </div>
+    <!-- /.search-popup -->
+
+
+
+    <script src="{% static 'assets/vendors/jquery/jquery-3.6.0.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jarallax/jarallax.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ajaxchimp/jquery.ajaxchimp.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-appear/jquery.appear.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-circle-progress/jquery.circle-progress.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-magnific-popup/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-validate/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/nouislider/nouislider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/odometer/odometer.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/swiper/swiper.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/tiny-slider/tiny-slider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wnumb/wNumb.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    <script src="{% static 'assets/vendors/isotope/isotope.js' %}"></script>
+    <script src="{% static 'assets/vendors/countdown/countdown.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/owl-carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bxslider/jquery.bxslider.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap-select/js/bootstrap-select.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/vegas/vegas.min.js' %}"></script>
+    <script src="{% static 'assets/vendors/jquery-ui/jquery-ui.js' %}"></script>
+    <script src="{% static 'assets/vendors/timepicker/timePicker.js' %}"></script>
+    <script src="{% static 'assets/vendors/circleType/jquery.circleType.js' %}"></script>
+    <script src="{% static 'assets/vendors/circleType/jquery.lettering.min.js' %}"></script>
+
+
+
+
+    <!-- template js -->
+    <script src="{% static 'assets/js/agrion.js' %}"></script>
+</body>
